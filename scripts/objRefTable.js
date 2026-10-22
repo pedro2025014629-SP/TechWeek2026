@@ -6,12 +6,16 @@ self.C3_GetObjectRefTable = function () {
 		C3.Behaviors.Platform,
 		C3.Behaviors.bound,
 		C3.Behaviors.solid,
+		C3.Plugins.Touch,
 		C3.Plugins.Sprite.Cnds.OnCollision,
 		C3.Plugins.Sprite.Acts.Destroy,
 		C3.Plugins.System.Acts.AddVar,
 		C3.Plugins.System.Cnds.Compare,
 		C3.Plugins.System.Acts.RestartLayout,
-		C3.Plugins.System.Acts.ResetEventVar
+		C3.Plugins.System.Acts.ResetEventVar,
+		C3.Plugins.Touch.Cnds.IsTouchingObject,
+		C3.Behaviors.Platform.Acts.SimulateControl,
+		C3.Plugins.Touch.Cnds.IsInTouch
 	];
 };
 self.C3_JsPropNameTable = [
@@ -24,6 +28,10 @@ self.C3_JsPropNameTable = [
 	{chave: 0},
 	{Porta: 0},
 	{lava: 0},
+	{direita: 0},
+	{esquerda: 0},
+	{pular: 0},
+	{Toque: 0},
 	{chaves: 0}
 ];
 
@@ -32,5 +40,9 @@ self.InstanceType = {
 	blocos: class extends self.ISpriteInstance {},
 	chave: class extends self.ISpriteInstance {},
 	Porta: class extends self.ISpriteInstance {},
-	lava: class extends self.ISpriteInstance {}
+	lava: class extends self.ISpriteInstance {},
+	direita: class extends self.ISpriteInstance {},
+	esquerda: class extends self.ISpriteInstance {},
+	pular: class extends self.ISpriteInstance {},
+	Toque: class extends self.IInstance {}
 }
